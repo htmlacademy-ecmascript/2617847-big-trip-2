@@ -3,9 +3,6 @@ import EventSorting from './view/trip-events-sort-view.js';
 import BoardPresenter from './presenter/presenter.js';
 import { render } from './render';
 
-const mainElement = document.querySelector('.page-main');
-const headerElement = document.querySelector('.page-header');
-
 const tripEvents = document.querySelector('.trip-events');
 const tripFilters = document.querySelector('.trip-controls__filters');
 
