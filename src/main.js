@@ -1,8 +1,17 @@
-import EventForm from './view/trip-events-form-view';
+import Filters from './view/filters-view.js';
+import EventSorting from './view/trip-events-sort-view.js';
+import BoardPresenter from './presenter/presenter.js';
 import { render } from './render';
 
-const pageMain = document.querySelector('.page-body__container');
-const tripEvents = pageMain.querySelector('.trip-events');
+const mainElement = document.querySelector('.page-main');
+const headerElement = document.querySelector('.page-header');
 
-render(new EventForm(), tripEvents);
+const tripEvents = document.querySelector('.trip-events');
+const tripFilters = document.querySelector('.trip-controls__filters');
 
+const boardPresenter = new BoardPresenter({boardContainer: tripEvents});
+
+render(new Filters(), tripFilters);
+render(new EventSorting(), tripEvents);
+
+boardPresenter.init();

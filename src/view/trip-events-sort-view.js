@@ -1,6 +1,6 @@
 import { createElement } from '../render';
 
-function createEventFormTemplate () {
+function createEventSortTemplate () {
   return `
   <form class="trip-events__trip-sort  trip-sort" action="#" method="get">
             <div class="trip-sort__item  trip-sort__item--day">
@@ -31,14 +31,15 @@ function createEventFormTemplate () {
   `;
 }
 
-export default class EventForm {
+export default class EventSorting {
   getTemplate(){
-    return createEventFormTemplate();
+    return createEventSortTemplate();
   }
 
   getElement(){
     if(!this.element) {
       this.element = createElement(this.getTemplate());
+      return this.element;
     }
   }
 
